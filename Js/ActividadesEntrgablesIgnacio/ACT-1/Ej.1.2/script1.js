@@ -4,8 +4,8 @@
 console.log(i);
 */
 
-const max = 100;
-for (let i = 1; i < max; ++i) {
-  document.body.innerHTML += "<p>" + i + "</p>";
+const max = 101;
+for (let e = 1; e < max; ++e) {
+  document.body.innerHTML += "<p>" + e + "</p>";
 }
-console.log(i);
+console.log(e);
