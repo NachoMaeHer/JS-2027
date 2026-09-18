@@ -3,7 +3,7 @@
 }
 console.log(i);
 */
-const max = 100;
+const max = 101;
 for (let i = 1; i < max; ++i) {
   document.body.innerHTML += "<p>" + i + "</p>";
 }
