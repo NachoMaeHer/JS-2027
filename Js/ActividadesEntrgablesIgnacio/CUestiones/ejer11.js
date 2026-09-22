@@ -1,17 +1,17 @@
-let userName = prompt("Quién está ahí?", "");
+let Usuario = prompt("Inicia sesión", "");
 
-if (userName == "Admin") {
-  let pass = prompt("¿Contraseña?", "");
+if (Usuario == "Admin") {
+  let contraseña = prompt("¿Contraseña?", "");
 
-  if (pass === "TheMaster") {
-    alert("Bienvenido!");
-  } else if (pass === "" || pass === null) {
+  if (contraseña === "TheMaster") {
+    alert("¡Bienvenido!");
+  } else if (contraseña === "" || contraseña === null) {
     alert("Cancelado.");
   } else {
     alert("Contraseña incorrecta");
   }
-} else if (userName === "" || userName === null) {
-  alert("Canceledo");
+} else if (Usuario === "" || Usuario === null) {
+  alert("Cancelado");
 } else {
   alert("No te conozco");
 }
