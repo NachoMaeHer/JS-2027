@@ -1,5 +1,15 @@
 function horas30Minutos() {
   for (let hora = 9; hora <= 21; hora++) {
+    for (let minutos = 0; minutos < 60; minutos += 30) {
+      let minutosFormateados = minutos === 0 ? "00" : "30";
+      console.log(hora + ":" + minutosFormateados);
+    }
+  }
+}
+horas30Minutos();
+
+/**function horas30Minutos() {
+  for (let hora = 9; hora <= 21; hora++) {
     let minutos = "30";
 
     console.log(hora + ":" + minutos);
@@ -16,3 +26,4 @@ function horas30Minutos() {
   }
 }
 console.log(horas30Minutos());
+*/
