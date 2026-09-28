@@ -7,3 +7,10 @@ function horas5Minutos() {
   }
 }
 horas5Minutos();
+/**function horas5Minutos()
+ * let hora = 9;
+ * let minutos = 0;
+ * while (hora != 21 || minutos != 0
+ *
+ * ) {
+ */
