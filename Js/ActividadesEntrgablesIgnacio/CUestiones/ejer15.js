@@ -24,6 +24,6 @@ horas30Minutos();
       hora++;
     }
   }
-}pruev¡ba
+}
 console.log(horas30Minutos());
 */
