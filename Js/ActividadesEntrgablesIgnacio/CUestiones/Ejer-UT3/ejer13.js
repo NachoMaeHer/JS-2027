@@ -1,4 +1,17 @@
 function bonoloto() {
+  let ganadores = "";
+  let complementario;
+  let reintegro;
+  let aleatorio;
+
+  for (let i = 0; i < 6; i++) {
+    do {
+      aleatorio = Math.trunc(Math.random() * (49 - 1 + 1));
+    } while (ganadores.includes("-" + aleatorio + "-"));
+  }
+}
+
+/**function bonoloto() {
   let combinacionGanadora = [];
   while (combinacionGanadora.length < 6) {
     let numero = Math.floor(Math.random() * 49) + 1;
@@ -14,4 +27,4 @@ function bonoloto() {
   console.log("Combinación ganadora:", combinacionGanadora);
   console.log("Complementario:", complementario);
   console.log("Reintegro:", reintegro);
-}
+}*/
