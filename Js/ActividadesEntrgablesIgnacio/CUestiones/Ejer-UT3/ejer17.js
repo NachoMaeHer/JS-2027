@@ -5,6 +5,8 @@ function obtenerFechaHace(fecha, dias) {
 }
 
 let date = new Date(2015, 0, 2);
-alert(obtenerFechaHace(date, 1));
-alert(obtenerFechaHace(date, 2));
-alert(obtenerFechaHace(date, 365));
+console.log(obtenerFechaHace(date, 1));
+console.log(obtenerFechaHace(date, 2));
+console.log(obtenerFechaHace(date, 365));
+
+console.log(date.toLocaleDateString());

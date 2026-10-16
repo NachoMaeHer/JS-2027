@@ -4,3 +4,5 @@ function cuantoFalta(fecha) {
   const diasFaltantes = Math.ceil(diferencia / (1000 * 60 * 60 * 24));
   return diasFaltantes;
 }
+
+console.log(cuantoFalta(16 - 10 - 2026));

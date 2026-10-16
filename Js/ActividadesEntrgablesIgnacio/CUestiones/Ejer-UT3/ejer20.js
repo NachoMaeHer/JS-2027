@@ -7,3 +7,5 @@ function getSecondsToTomorrow() {
   );
   return Math.floor((tomorrow - now) / 1000);
 }
+
+console.log(getSecondsToTomorrow());
