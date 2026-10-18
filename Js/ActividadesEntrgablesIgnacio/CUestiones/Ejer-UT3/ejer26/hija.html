@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hija</title>
+    <script>
+      function mostrarMensaje(texto) {
+        alert("La principal dice: " + texto);
+      }
+
+      function responder() {
+        if (window.opener && !window.opener.closed) {
+          let texto = prompt("Escribe tu respuesta:");
+          if (texto !== null) {
+            window.opener.mostrarRespuesta(texto);
+          }
+        } else {
+          console.log("La ventana principal no está disponible");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Hija</h1>
+    <button onclick="responder()">Responder</button>
+  </body>
+</html>

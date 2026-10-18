@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hija (postMessage)</title>
+    <script>
+      window.addEventListener("message", function (evento) {
+        if (evento.origin !== window.location.origin) return;
+
+        alert("Mensaje recibido: " + evento.data);
+
+        let respuesta = prompt("Escribe tu respuesta:");
+        if (respuesta !== null) {
+          evento.source.postMessage(respuesta, evento.origin);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hija (postMessage)</h1>
+    <p>Esperando mensajes de la principal...</p>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Principal</title>
+    <script>
+      let hija = null;
+
+      function abrirHija() {
+        hija = window.open("hija.html", "_blank", "width=400,height=300");
+      }
+      function enviarMensaje() {
+        if (hija && !hija.closed) {
+          let texto = prompt("Escribe un mensaje para la hija:");
+          if (texto !== null) {
+            hija.mostrarMensaje(texto);
+          }
+        } else {
+          console.log("No hay ninguna ventana hija abierta");
+        }
+      }
+      function mostrarRespuesta(texto) {
+        alert("La hija responde: " + texto);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Principal</h1>
+    <button onclick="abrirHija()">Abrir hija</button>
+    <button onclick="enviarMensaje()">Enviar mensaje</button>
+  </body>
+</html>

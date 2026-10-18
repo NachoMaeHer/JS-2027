@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejer25</title>
+    <script>
+      let ventana = null;
+      function abrirVentana(url, ancho, alto) {
+        let izquierda = (screen.width - ancho) / 2;
+        let arriba = (screen.height - alto) / 2;
+
+        let opciones =
+          "width=" + ancho +
+          ",height=" + alto +
+          ",left=" + izquierda +
+          ",top=" + arriba;
+
+        let nueva = window.open(url, "_blank", opciones);
+        if (nueva === null) {
+          console.log("El navegador ha bloqueado la ventana emergente");
+          return null;
+        }
+        return nueva;
+      }
+
+      function abrir() {
+        ventana = abrirVentana("https://es.wikipedia.org", 600, 400);
+      }
+      function cerrar() {
+        if (ventana && !ventana.closed) {
+          ventana.close();
+        } else {
+          console.log("No hay ninguna ventana abierta que cerrar");
+        }
+      }
+
+      // ventana = abrirVentana("https://es.wikipedia.org", 600, 400);
+    </script>
+  </head>
+  <body>
+    <h1>Ejer25</h1>
+    <button onclick="abrir()">Abrir</button>
+    <button onclick="cerrar()">Cerrar</button>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noopener</title>
+    <script>
+      // Caso 1: sin características
+      function abrirNormal() {
+        let ventana = window.open("https://www.mozilla.org");
+        console.log("Sin características devuelve:", ventana);
+      }
+
+      // Caso 2: con "noopener,noreferrer"
+      function abrirSeguro() {
+        let ventana = window.open(
+          "https://www.mozilla.org",
+          "_blank",
+          "noopener,noreferrer"
+        );
+        console.log("Con noopener,noreferrer devuelve:", ventana);
+      }
+
+      /*
+        Para qué sirve noopener:
+        Normalmente la ventana nueva recibe en window.opener una referencia
+        a la ventana que la abrió. Una web externa maliciosa podría usarla
+        para manipular nuestra página (por ejemplo, cambiarle la dirección
+        a una web falsa: "reverse tabnabbing").
+        Con noopener, window.opener vale null en la ventana nueva, así que
+        queda desconectada de la nuestra.
+
+        Para qué sirve noreferrer:
+        No envía a la web externa la cabecera Referer, es decir, no le
+        dice de qué página venimos. Además, implica noopener.
+      */
+    </script>
+  </head>
+  <body>
+    <h1>Noopener</h1>
+    <button onclick="abrirNormal()">Abrir sin características</button>
+    <button onclick="abrirSeguro()">Abrir con noopener,noreferrer</button>
+  </body>
+</html>
