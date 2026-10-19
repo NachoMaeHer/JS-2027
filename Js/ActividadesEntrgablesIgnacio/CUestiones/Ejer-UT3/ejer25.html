@@ -11,10 +11,14 @@
         let arriba = (screen.height - alto) / 2;
 
         let opciones =
-          "width=" + ancho +
-          ",height=" + alto +
-          ",left=" + izquierda +
-          ",top=" + arriba;
+          "width=" +
+          ancho +
+          ",height=" +
+          alto +
+          ",left=" +
+          izquierda +
+          ",top=" +
+          arriba;
 
         let nueva = window.open(url, "_blank", opciones);
         if (nueva === null) {
@@ -25,7 +29,7 @@
       }
 
       function abrir() {
-        ventana = abrirVentana("https://es.wikipedia.org", 600, 400);
+        ventana = abrirVentana("https://www.youtube.com", 600, 400);
       }
       function cerrar() {
         if (ventana && !ventana.closed) {
