@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejer31</title>
+    <script>
+      function obtenerParametro(nombre) {
+        let busqueda = window.location.search;
+
+        if (busqueda === "") {
+          return null;
+        }
+
+        let pares = busqueda.slice(1).split("&");
+
+        for (let i = 0; i < pares.length; i++) {
+          let partes = pares[i].split("=");
+          if (partes[0] === nombre) {
+            return partes[1];
+          }
+        }
+
+        return null;
+      }
+
+      console.log('obtenerParametro("nombre"):', obtenerParametro("nombre"));
+      console.log('obtenerParametro("id"):', obtenerParametro("id"));
+      console.log('obtenerParametro("edad"):', obtenerParametro("edad"));
+    </script>
+  </head>
+  <body>
+    <h1>Ejer 31</h1>
+    <p>Abre la consola (F12) para ver los resultados.</p>
+  </body>
+</html>

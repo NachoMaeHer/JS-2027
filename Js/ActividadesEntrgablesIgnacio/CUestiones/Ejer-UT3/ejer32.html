@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejer32</title>
+    <script>
+      function descomponerURL(url) {
+
+        let posProtocolo = url.indexOf("://");
+        let protocolo = url.slice(0, posProtocolo);
+        let resto = url.slice(posProtocolo + 3);
+
+        let posPath = resto.indexOf("/");
+        let dominioYPuerto = resto.slice(0, posPath);
+        let path = resto.slice(posPath);
+
+        let posPuerto = dominioYPuerto.indexOf(":");
+        let dominio;
+        let puerto;
+
+        if (posPuerto === -1) {
+          dominio = dominioYPuerto;
+          if (protocolo === "https") {
+            puerto = "443";
+          } else {
+            puerto = "80";
+          }
+        } else {
+          dominio = dominioYPuerto.slice(0, posPuerto);
+          puerto = dominioYPuerto.slice(posPuerto + 1);
+        }
+
+        return [protocolo, dominio, puerto, path];
+      }
+
+      console.log(descomponerURL("https://ejemplo.com:8080/curso/tema.html"));
+      console.log(descomponerURL("https://ejemplo.com/index.html"));
+      console.log(descomponerURL("http://ejemplo.com/index.html"));
+      console.log(descomponerURL("http://127.0.0.1:5500/ejercicios/pagina.html"));
+    </script>
+  </head>
+  <body>
+    <h1>Ejer 32</h1>
+    <p>Abre la consola (F12) para ver los resultados.</p>
+  </body>
+</html>

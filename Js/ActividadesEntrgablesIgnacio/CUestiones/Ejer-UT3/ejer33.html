@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejer33</title>
+    <script>
+      function descomponerURL(url) {
+        let posProtocolo = url.indexOf("://");
+        let protocolo = url.slice(0, posProtocolo);
+        let resto = url.slice(posProtocolo + 3);
+
+        let posPath = resto.indexOf("/");
+        let dominioYPuerto = resto.slice(0, posPath);
+        let path = resto.slice(posPath);
+
+        let posPuerto = dominioYPuerto.indexOf(":");
+        let dominio;
+        let puerto;
+
+        if (posPuerto === -1) {
+          dominio = dominioYPuerto;
+          if (protocolo === "https") {
+            puerto = "443";
+          } else {
+            puerto = "80";
+          }
+        } else {
+          dominio = dominioYPuerto.slice(0, posPuerto);
+          puerto = dominioYPuerto.slice(posPuerto + 1);
+        }
+
+        return [protocolo, dominio, puerto, path];
+      }
+
+      function mismoOrigen(url1, url2) {
+        let partes1 = descomponerURL(url1);
+        let partes2 = descomponerURL(url2);
+
+        return (
+          partes1[0] === partes2[0] &&
+          partes1[1] === partes2[1] &&
+          partes1[2] === partes2[2]
+        );
+      }
+
+      console.log(mismoOrigen("https://ejemplo.com:8080/a.html", "https://ejemplo.com:8080/b/c.html"));
+      console.log(mismoOrigen("http://ejemplo.com:8080/a.html", "https://ejemplo.com:8080/a.html"));
+      console.log(mismoOrigen("https://ejemplo.com:8080/a", "https://tienda.ejemplo.com:8080/a"));
+      console.log(mismoOrigen("https://ejemplo.com:8080/a", "https://ejemplo.com:9090/a"));
+      console.log(mismoOrigen("https://ejemplo.com/a", "https://ejemplo.com:443/b"));
+    </script>
+  </head>
+  <body>
+    <h1>Ejer 33</h1>
+    <p>Abre la consola (F12) para ver los resultados.</p>
+  </body>
+</html>
