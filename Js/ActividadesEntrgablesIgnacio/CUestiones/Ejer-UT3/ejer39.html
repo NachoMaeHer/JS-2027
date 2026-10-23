@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejer39</title>
+    <script>
+      function recuperarFecha(fecha) {
+        let dia = localStorage.getItem("dia");
+        let mes = localStorage.getItem("mes");
+        let anno = localStorage.getItem("año");
+
+        if (dia == null || mes == null || anno == null) {
+          return null;
+        }
+        return new Date(anno, mes - 1, dia);
+      }
+      console.log(recuperarFecha());
+    </script>
+  </head>
+  <body></body>
+</html>

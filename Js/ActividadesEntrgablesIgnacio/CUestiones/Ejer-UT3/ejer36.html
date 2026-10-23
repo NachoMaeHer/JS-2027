@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function saludo(idioma = navigator.language) {
+        if (idioma.startsWith("es")) {
+          alert("Hola");
+        } else if (idioma.startsWith("fr")) {
+          alert("Bonjour");
+        } else {
+          alert("Hello");
+        }
+      }
+      saludo("es-ES"); // "¡Hola!"
+      saludo("fr-FR"); // "Bonjour !"
+      saludo("de-DE"); // "Hello!"
+      saludo(); // el saludo correspondiente al idioma de tu navegador
+    </script>
+  </head>
+  <body></body>
+</html>
