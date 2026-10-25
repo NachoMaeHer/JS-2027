@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejer7</title>
+    <script>
+      let original = [1, "dos", "tres", 4, 5, "seis", "siete"];
+
+      let array1 = original.slice();
+      for (let i = array1.length - 1; i >= 0; i--) {
+        if (typeof array1[i] === "string") {
+          array1.splice(i, 1);
+        }
+      }
+      console.log("1:", array1);
+
+      let array2 = original.slice();
+      for (let i = array2.length - 1; i >= 0; i--) {
+        if (typeof array2[i] === "string") {
+          array2.splice(i + 1, 0, array2[i].toUpperCase());
+        }
+      }
+      console.log("2:", array2);
+      
+      let array3 = original.slice();
+      for (let i = array3.length - 1; i >= 0; i--) {
+        if (typeof array3[i] === "string") {
+          array3.splice(i, 1, "ELIMINADO", "INSERTADO"); 
+        }
+      }
+      console.log("3:", array3);
+      console.log("original (intacto):", original);
+    </script>
+  </head>
+  <body>
+    <h1>Arrays y splice</h1>
+    <p>Abre la consola (F12) para ver los resultados.</p>
+  </body>
+</html>
