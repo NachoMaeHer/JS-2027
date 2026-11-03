@@ -12,3 +12,11 @@ let array = [
 ];
 ordenarPorEdad(array);
 console.log();
+
+/**
+ * let pedro2 = arr.find(function(item){
+ *  return item.nombre == "Pedro";
+ * });
+ *
+ * console.log(pedro2);
+ */
