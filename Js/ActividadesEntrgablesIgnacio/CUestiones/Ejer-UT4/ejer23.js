@@ -20,7 +20,8 @@ calculator.read();
 alert("Sum=" + calculator.sum());
 alert("Mul=" + calculator.mul());
 
-//B
+//Correción
+/** 
 class calculator {
   read = function () {
     this.a = +prompt("Ingrese el primer valor:", 0);
@@ -32,4 +33,4 @@ class calculator {
   mul = function () {
     return this.a * this.b;
   };
-}
+}*/
