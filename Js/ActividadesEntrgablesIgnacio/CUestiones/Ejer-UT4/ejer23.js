@@ -14,7 +14,7 @@ function calculator() {
   };
 }
 
-let calculator = new Calculator();
+let calculator = new calculator();
 calculator.read();
 
 alert("Sum=" + calculator.sum());
