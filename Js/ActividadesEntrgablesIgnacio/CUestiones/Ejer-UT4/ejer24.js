@@ -31,3 +31,30 @@ class Vehiculos {
   }
 }
  */
+
+/**=========== Esto es dek ejercicio 27 que extiende del 24 ============ */
+class Coche extends Vehiculo {
+  constructor(color, marca, modelo) {
+    super(color, marca, modelo, 120);
+  }
+  comenzar() {
+    console.log("Encender motor");
+  }
+  parar() {
+    console.log("Aparcar");
+  }
+  distanciMax;
+}
+
+class Avion extends Vehiculo {
+  constructor(color, marca, modelo) {
+    super(color, marca, modelo, 40000);
+  }
+  comenzar() {
+    console.log("Despegar");
+  }
+  parar() {
+    console.log("Aterrizar");
+  }
+  distanciMax;
+}
